@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86",
+  "command": "C:\\Users\\MIJHAE~1\\AppData\\Local\\Android\\Sdk\\ndk\\282~1.136\\TOOLCH~1\\llvm\\prebuilt\\WINDOW~1\\bin\\CLANG_~1.EXE --target=i686-none-linux-android33 --sysroot=\"C:/Users/Mijhael Valenzuela/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot\" -Dapp19a2_EXPORTS -isystem \"C:/Users/Mijhael Valenzuela/.gradle/caches/9.3.1/transforms/d89189cf1bb462d02326088e419c8206/workspace/transformed/games-activity-4.0.0/prefab/modules/game-activity_static/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\app19a2.dir\\main.cpp.o -c \"C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\main.cpp\"",
+  "file": "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\main.cpp"
+},
+{
+  "directory": "C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86",
+  "command": "C:\\Users\\MIJHAE~1\\AppData\\Local\\Android\\Sdk\\ndk\\282~1.136\\TOOLCH~1\\llvm\\prebuilt\\WINDOW~1\\bin\\CLANG_~1.EXE --target=i686-none-linux-android33 --sysroot=\"C:/Users/Mijhael Valenzuela/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot\" -Dapp19a2_EXPORTS -isystem \"C:/Users/Mijhael Valenzuela/.gradle/caches/9.3.1/transforms/d89189cf1bb462d02326088e419c8206/workspace/transformed/games-activity-4.0.0/prefab/modules/game-activity_static/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\app19a2.dir\\AndroidOut.cpp.o -c \"C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\AndroidOut.cpp\"",
+  "file": "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\AndroidOut.cpp"
+},
+{
+  "directory": "C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86",
+  "command": "C:\\Users\\MIJHAE~1\\AppData\\Local\\Android\\Sdk\\ndk\\282~1.136\\TOOLCH~1\\llvm\\prebuilt\\WINDOW~1\\bin\\CLANG_~1.EXE --target=i686-none-linux-android33 --sysroot=\"C:/Users/Mijhael Valenzuela/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot\" -Dapp19a2_EXPORTS -isystem \"C:/Users/Mijhael Valenzuela/.gradle/caches/9.3.1/transforms/d89189cf1bb462d02326088e419c8206/workspace/transformed/games-activity-4.0.0/prefab/modules/game-activity_static/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\app19a2.dir\\Renderer.cpp.o -c \"C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\Renderer.cpp\"",
+  "file": "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\Renderer.cpp"
+},
+{
+  "directory": "C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86",
+  "command": "C:\\Users\\MIJHAE~1\\AppData\\Local\\Android\\Sdk\\ndk\\282~1.136\\TOOLCH~1\\llvm\\prebuilt\\WINDOW~1\\bin\\CLANG_~1.EXE --target=i686-none-linux-android33 --sysroot=\"C:/Users/Mijhael Valenzuela/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot\" -Dapp19a2_EXPORTS -isystem \"C:/Users/Mijhael Valenzuela/.gradle/caches/9.3.1/transforms/d89189cf1bb462d02326088e419c8206/workspace/transformed/games-activity-4.0.0/prefab/modules/game-activity_static/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\app19a2.dir\\Shader.cpp.o -c \"C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\Shader.cpp\"",
+  "file": "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\Shader.cpp"
+},
+{
+  "directory": "C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86",
+  "command": "C:\\Users\\MIJHAE~1\\AppData\\Local\\Android\\Sdk\\ndk\\282~1.136\\TOOLCH~1\\llvm\\prebuilt\\WINDOW~1\\bin\\CLANG_~1.EXE --target=i686-none-linux-android33 --sysroot=\"C:/Users/Mijhael Valenzuela/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot\" -Dapp19a2_EXPORTS -isystem \"C:/Users/Mijhael Valenzuela/.gradle/caches/9.3.1/transforms/d89189cf1bb462d02326088e419c8206/workspace/transformed/games-activity-4.0.0/prefab/modules/game-activity_static/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\app19a2.dir\\TextureAsset.cpp.o -c \"C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\TextureAsset.cpp\"",
+  "file": "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\TextureAsset.cpp"
+},
+{
+  "directory": "C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86",
+  "command": "C:\\Users\\MIJHAE~1\\AppData\\Local\\Android\\Sdk\\ndk\\282~1.136\\TOOLCH~1\\llvm\\prebuilt\\WINDOW~1\\bin\\CLANG_~1.EXE --target=i686-none-linux-android33 --sysroot=\"C:/Users/Mijhael Valenzuela/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot\" -Dapp19a2_EXPORTS -isystem \"C:/Users/Mijhael Valenzuela/.gradle/caches/9.3.1/transforms/d89189cf1bb462d02326088e419c8206/workspace/transformed/games-activity-4.0.0/prefab/modules/game-activity_static/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\app19a2.dir\\Utility.cpp.o -c \"C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\Utility.cpp\"",
+  "file": "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\Utility.cpp"
+}
+]

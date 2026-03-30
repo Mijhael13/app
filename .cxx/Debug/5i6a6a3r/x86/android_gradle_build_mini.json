@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Mijhael Valenzuela\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\.cxx\\Debug\\5i6a6a3r\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Mijhael Valenzuela\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\.cxx\\Debug\\5i6a6a3r\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "app19a2::@6890427a1f51a3e7e1df": {
+      "artifactName": "app19a2",
+      "abi": "x86",
+      "output": "C:\\Users\\Mijhael Valenzuela\\AndroidStudioProjects\\App19a2\\app\\build\\intermediates\\cxx\\Debug\\5i6a6a3r\\obj\\x86\\libapp19a2.so",
+      "runtimeFiles": []
+    }
+  }
+}

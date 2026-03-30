@@ -1,0 +1,3 @@
+C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86/CMakeFiles/app19a2.dir
+C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86/CMakeFiles/edit_cache.dir
+C:/Users/Mijhael Valenzuela/AndroidStudioProjects/App19a2/app/.cxx/Debug/5i6a6a3r/x86/CMakeFiles/rebuild_cache.dir

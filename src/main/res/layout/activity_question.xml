@@ -8,15 +8,73 @@
     android:padding="16dp"
     tools:context=".QuestionActivity">
 
+    <!-- Top Container for Counters and Settings -->
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pregunta 1/10 - Nivel 1"
+                android:textColor="@color/brand_purple"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Puntos: 0"
+                android:textColor="@color/brand_green"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lives"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vidas: ❤️❤️❤️"
+                android:textColor="@color/brand_pink"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Settings Button (Gear Icon) -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Ajustes"
+            android:elevation="20dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_settings" />
+    </LinearLayout>
+
     <!-- Image related to the question -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_image"
         android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="0dp"
         app:cardBackgroundColor="#D9D9D9"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -33,13 +91,13 @@
         android:id="@+id/tv_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/bg_question_box"
         android:gravity="center"
-        android:padding="16dp"
+        android:padding="12dp"
         android:text="Pregunta A"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/card_image"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,97 +108,104 @@
         android:id="@+id/layout_answers"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/tv_question"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_goneMarginTop="16dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_answer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/bg_answer_default"
             android:text="Respuesta 1"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:padding="12dp" />
+            android:textSize="16sp"
+            android:padding="8dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_answer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/bg_answer_default"
             android:text="Respuesta 2"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:padding="12dp" />
+            android:textSize="16sp"
+            android:padding="8dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_answer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/bg_answer_default"
             android:text="Respuesta 3"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:padding="12dp" />
+            android:textSize="16sp"
+            android:padding="8dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_answer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/bg_answer_default"
             android:text="Respuesta 4"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:padding="12dp" />
+            android:textSize="16sp"
+            android:padding="8dp" />
     </LinearLayout>
 
-    <!-- Feedback Section -->
+    <!-- Feedback Section with ScrollView -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_feedback"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/bg_feedback_box"
         android:padding="12dp"
         android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@id/layout_answers"
+        app:layout_constraintBottom_toTopOf="@id/btn_next"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/img_feedback_icon"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@android:drawable/checkbox_on_background"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_feedback_text"
+        <ScrollView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="12dp"
-            android:text="¡Bien hecho!"
-            android:textColor="@color/brand_green"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:fadeScrollbars="false"
+            android:scrollbarStyle="insideOverlay"
             app:layout_constraintStart_toEndOf="@id/img_feedback_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_feedback_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¡Bien hecho!"
+                android:textColor="@color/brand_green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -149,18 +214,16 @@
         android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:background="@drawable/bg_next_button"
         android:paddingStart="32dp"
         android:paddingEnd="32dp"
         android:text="siguiente"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/layout_feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

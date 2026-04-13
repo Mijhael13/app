@@ -25,6 +25,10 @@
             android:name=".QuestionActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".TransitionActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

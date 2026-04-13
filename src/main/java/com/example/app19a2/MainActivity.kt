@@ -1,5 +1,6 @@
 package com.example.app19a2
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.os.Build
+import androidx.appcompat.app.AlertDialog
 import com.example.app19a2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,17 +20,41 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Hide action bar
         supportActionBar?.hide()
-
-        // Fullscreen mode to match the design (immersive)
         hideSystemUI()
 
         binding.btnPlay.setOnClickListener {
-            // Ir a la pantalla de preguntas
             val intent = Intent(this, QuestionActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnSettings.setOnClickListener {
+            showSettingsDialog()
+        }
+    }
+
+    private fun showSettingsDialog() {
+        val options = arrayOf("Borrar datos guardados", "Salir de la app")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Ajustes")
+        builder.setItems(options) { _, which ->
+            when (which) {
+                0 -> deleteSavedData()
+                1 -> finishAffinity()
+            }
+        }
+        builder.setNegativeButton("Cancelar", null)
+        builder.show()
+    }
+
+    private fun deleteSavedData() {
+        val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
+        prefs.edit().clear().apply()
+        // Opcional: Mostrar confirmación
+        AlertDialog.Builder(this)
+            .setMessage("Datos borrados correctamente")
+            .setPositiveButton("OK", null)
+            .show()
     }
 
     private fun hideSystemUI() {

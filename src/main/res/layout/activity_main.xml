@@ -7,32 +7,46 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <!-- Background Decoration (Top Right) -->
+    <!-- Background Decoration (Top) -->
+    <ImageView
+        android:id="@+id/bg_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/morado_arriba"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Background Decoration (Bottom Left) -->
-    <View
-        android:id="@+id/bg_top_right"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="-150dp"
-        android:layout_marginEnd="-120dp"
-        android:background="@drawable/bg_purple_circle"
+    <!-- Background Decoration (Bottom) -->
+    <ImageView
+        android:id="@+id/bg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/morado_abajo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Settings Button (Gear Icon in Light Gray) -->
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Ajustes"
+        android:elevation="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/bg_bottom_left"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="-120dp"
-        android:layout_marginBottom="-150dp"
-        android:background="@drawable/bg_purple_circle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Muscle Arm Silhouette (4th image) -->
-
-    <!-- Logo "MYOS" (1st image) -->
+    <!-- Muscle Arm Silhouette -->
     <ImageView
         android:id="@+id/img_muscle_arm"
         android:layout_width="282dp"
@@ -42,11 +56,10 @@
         android:contentDescription="Muscle Silhouette"
         android:src="@drawable/img_muscle_silhouette"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Bunny Character (2nd image) -->
+    <!-- Logo "MYOS" -->
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="201dp"
@@ -59,21 +72,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_muscle_arm" />
 
+    <!-- Bunny Character -->
     <ImageView
         android:id="@+id/img_character"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="361dp"
         android:adjustViewBounds="true"
         android:contentDescription="Bunny Character"
         android:src="@drawable/img_character"
-        app:layout_constraintBottom_toBottomOf="@+id/bg_bottom_left"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_logo"
+        app:layout_constraintBottom_toTopOf="@id/btn_play"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_logo" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Play Button (3rd image) -->
+    <!-- Play Button -->
     <ImageView
         android:id="@+id/btn_play"
         android:layout_width="240dp"
@@ -87,8 +100,6 @@
         android:src="@drawable/img_play_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bg_bottom_left" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

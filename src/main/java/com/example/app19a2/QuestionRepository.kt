@@ -157,7 +157,92 @@ object QuestionRepository {
         
         Question(40, "¿Dónde se encuentran los músculos Isquiotibiales?", 
             listOf("Detrás del muslo", "Delante de la rodilla", "En la parte externa de la cadera", "En el brazo"), 
-            0, "Este grupo (bíceps femoral, semitendinoso y semimembranoso) recorre la parte posterior del fémur, permitiendo doblar la rodilla y extender la cadera.", 1)
+            0, "Este grupo (bíceps femoral, semitendinoso y semimembranoso) recorre la parte posterior del fémur, permitiendo doblar la rodilla y extender la cadera.", 1),
+
+        // Nuevas preguntas añadidas
+        Question(41, "¿Cuál es el músculo más grande del cuerpo humano?", 
+            listOf("El fémur.", "El glúteo mayor.", "El dorsal ancho.", "Fémur"), 
+            1, "Es clave para mantener la postura erguida y caminar.", 1),
+        
+        Question(42, "¿Cómo se llaman los tejidos que unen los músculos a los huesos?", 
+            listOf("Ligamentos.", "Nervios.", "Tendones.", "Rodilla"), 
+            2, "Los ligamentos unen hueso con hueso; los tendones, músculo con hueso.", 1),
+        
+        Question(43, "¿Qué músculo trabaja de forma automática (involuntaria) para mantenernos vivos?", 
+            listOf("El bíceps.", "El corazón (miocardio).", "El cuádriceps.", "Pecho"), 
+            1, "Es tejido muscular cardiaco y no podemos controlar sus latidos.", 1),
+        
+        Question(44, "Para que el brazo se doble (flexión), el bíceps se contrae. ¿Qué hace el tríceps en ese momento?", 
+            listOf("Se contrae también.", "Se relaja (extensión).", "No hace nada.", "se flexiona"), 
+            1, "Los músculos trabajan en parejas opuestas.", 1),
+        
+        Question(45, "¿Qué nutriente es el \"ladrillo\" principal para reparar las fibras musculares?", 
+            listOf("Carbohidratos.", "Grasas.", "Proteínas.", "Vegetales"), 
+            2, "Los aminoácidos de las proteínas reconstruyen el tejido.", 1),
+        
+        Question(46, "¿Aproximadamente cuántos músculos tiene el cuerpo humano?", 
+            listOf("Alrededor de 200.", "Más de 600.", "Exactamente 1000.", "Aproximadamente 230"), 
+            1, "Varía según si se cuentan músculos pequeños o en grupo.", 1),
+        
+        Question(47, "¿Cuál es el músculo más fuerte del cuerpo en relación a su tamaño (el que ejerce más presión)?", 
+            listOf("La lengua.", "El masetero (mandíbula).", "El corazón.", "El ojo"), 
+            1, "Puede cerrar la mandíbula con una fuerza de hasta 90kg.", 1),
+        
+        Question(48, "¿Qué causa comúnmente un calambre muscular?", 
+            listOf("Exceso de sueño.", "Falta de hidratación y minerales (como potasio).", "Comer demasiada proteína.", "Falta de sueño"), 
+            1, "La falta de hidratación y electrolitos altera la señal eléctrica del músculo.", 1),
+        
+        Question(49, "¿Qué músculo es el principal responsable de la flexión del codo?", 
+            listOf("Bíceps braquial", "Tríceps", "Deltoides", "Cuádriceps"), 
+            0, "Es el músculo motor que tira del antebrazo hacia el hombro para doblar el codo.", 1),
+        
+        Question(50, "¿Qué músculo permite la extensión de la rodilla al caminar o correr?", 
+            listOf("Sartorio", "Ilíaco", "Cuádriceps", "Radio Carpiana"), 
+            2, "Son cuatro músculos que trabajan juntos para estirar la pierna (extensión) al dar el paso.", 1),
+        
+        Question(51, "Músculo que da forma al hombro y permite levantar el brazo lateralmente:", 
+            listOf("Trapecio", "Deltoides", "Bíceps", "óseo"), 
+            1, "Envuelve el hombro; sus fibras laterales son las que levantan el brazo hacia afuera.", 1),
+        
+        Question(52, "Músculo grande del pecho utilizado en movimiento de empuje:", 
+            listOf("Intercostales", "Serrato", "Pectoral mayor", "Pectoral mediano"), 
+            2, "Músculo potente del tórax que empuja objetos lejos del cuerpo.", 1),
+        
+        Question(53, "¿Qué músculo forma el límite medial del triángulo femoral?", 
+            listOf("Aductor largo", "Ligamento inguinal", "Húmero cubital", "Cadera"), 
+            0, "Se ubica en la cara interna del muslo, cerrando el espacio del triángulo femoral por el centro.", 1),
+        
+        Question(54, "¿Qué propiedad muscular permite al tejido recuperar su forma original tras un estiramiento?", 
+            listOf("Extensibilidad", "Contractilidad", "Elasticidad", "Rotaciones"), 
+            2, "Como una liga, permite que el músculo vuelva a su tamaño normal tras estirarse.", 1),
+        
+        Question(55, "El músculo “esternocleidomastoideo” se encuentra en:", 
+            listOf("La espalda", "El cuello", "El brazo", "La pierna"), 
+            1, "El esternocleidomastoideo une el pecho con la base del cráneo para girar la cabeza.", 1),
+        
+        Question(56, "¿Qué molécula proporciona la energía directa para el deslizamiento de los filamentos musculares?", 
+            listOf("ATP", "Oxígeno", "Glucosa", "ARN"), 
+            0, "Es el combustible químico necesario para que las fibras musculares se muevan entre sí.", 1),
+        
+        Question(57, "¿Qué músculo tiene forma de abanico y cubre la parte superior del pecho?", 
+            listOf("Pectoral mayor", "Trapecio", "Mioglobina", "Aductor largo"), 
+            0, "Su diseño ancho y abierto desde el esternón al brazo le da la forma de abanico.", 1),
+        
+        Question(58, "¿Cómo se denomina el tejido conectivo denso que une el músculo esquelético al hueso?", 
+            listOf("Ligamento", "Tendón", "Fascia", "Goma"), 
+            1, "Es el cordón resistente que ancla la fuerza del músculo al hueso.", 1),
+        
+        Question(59, "Los músculos que presentan una forma ancha y delgada, como el pectoral mayor o el recto abdominal, se clasifican como:", 
+            listOf("Músculos circulares", "Músculos planos", "Músculos cortos", "Músculos grandes"), 
+            1, "Tienen poca profundidad y mucha superficie, ideales para cubrir cavidades.", 1),
+        
+        Question(60, "En la terminología anatómica, ¿cuál es el punto de unión de un músculo que se desplaza durante la contracción?", 
+            listOf("Inserción", "Vientre", "Origen", "Molécula"), 
+            0, "Es el extremo del músculo que se engancha al hueso que realmente se mueve.", 1),
+        
+        Question(61, "¿Qué movimiento hacemos gracias al músculo Tríceps braquial?", 
+            listOf("Doblar el codo.", "Estirar el brazo.", "Levantar el hombro.", "Girar la muñeca."), 
+            1, "El tríceps se encuentra en la parte posterior del brazo y su función principal es la extensión del codo, lo que permite estirar el miembro superior.", 1)
     )
 
     fun getQuestionsByLevel(level: Int): List<Question> {

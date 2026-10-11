@@ -159,7 +159,6 @@ object QuestionRepository {
             listOf("Detrás del muslo", "Delante de la rodilla", "En la parte externa de la cadera", "En el brazo"), 
             0, "Este grupo (bíceps femoral, semitendinoso y semimembranoso) recorre la parte posterior del fémur, permitiendo doblar la rodilla y extender la cadera.", 1),
 
-        // Nuevas preguntas añadidas
         Question(41, "¿Cuál es el músculo más grande del cuerpo humano?", 
             listOf("El fémur.", "El glúteo mayor.", "El dorsal ancho.", "Fémur"), 
             1, "Es clave para mantener la postura erguida y caminar.", 1),
@@ -245,8 +244,11 @@ object QuestionRepository {
             1, "El tríceps se encuentra en la parte posterior del brazo y su función principal es la extensión del codo, lo que permite estirar el miembro superior.", 1)
     )
 
-    fun getQuestionsByLevel(level: Int): List<Question> {
-        return allQuestions.shuffled().take(10).map { shuffleOptions(it) }
+    fun getQuestionsByLevel(level: Int, excludeIds: List<Int> = emptyList()): List<Question> {
+        val available = allQuestions.filter { it.id !in excludeIds }
+        // Si no quedan suficientes preguntas nuevas, usamos todas de nuevo pero las mezclamos
+        val pool = if (available.size < 10) allQuestions else available
+        return pool.shuffled().take(10).map { shuffleOptions(it) }
     }
 
     fun getQuestionsByIds(ids: List<Int>): List<Question> {

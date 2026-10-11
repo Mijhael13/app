@@ -2,6 +2,7 @@ package com.example.app19a2
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
@@ -34,23 +35,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSettingsDialog() {
-        val options = arrayOf("Borrar datos guardados", "Salir de la app")
+        val options = arrayOf("Créditos", "Borrar datos guardados", "Salir de la app")
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Ajustes")
         builder.setItems(options) { _, which ->
             when (which) {
-                0 -> deleteSavedData()
-                1 -> finishAffinity()
+                0 -> showCreditsDialog()
+                1 -> deleteSavedData()
+                2 -> finishAffinity()
             }
         }
         builder.setNegativeButton("Cancelar", null)
         builder.show()
     }
 
+    private fun showCreditsDialog() {
+        val credits = arrayOf(
+            "Link 1: https://share.google/b8liEUbCJEotK840m",
+            "Link 2: https://share.google/mLIvs4uVxoQETT8Ql"
+        )
+        AlertDialog.Builder(this)
+            .setTitle("Créditos")
+            .setItems(credits) { _, which ->
+                val url = if (which == 0) "https://share.google/b8liEUbCJEotK840m" 
+                          else "https://share.google/mLIvs4uVxoQETT8Ql"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            }
+            .setPositiveButton("Cerrar", null)
+            .show()
+    }
+
     private fun deleteSavedData() {
         val prefs = getSharedPreferences("GamePrefs", Context.MODE_PRIVATE)
         prefs.edit().clear().apply()
-        // Opcional: Mostrar confirmación
         AlertDialog.Builder(this)
             .setMessage("Datos borrados correctamente")
             .setPositiveButton("OK", null)

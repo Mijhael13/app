@@ -2,6 +2,7 @@ package com.example.app19a2
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -29,8 +30,7 @@ class QuestionActivity : AppCompatActivity() {
 
         loadProgress()
         
-        // --- CAMBIO PARA EL NIVEL 3 COMPLETADO ---
-        if (currentLevel == 3 && questionIndex >= 10) { // Asumimos 10 preguntas por nivel
+        if (currentLevel == 3 && questionIndex >= 10) {
             showTransition(3, score)
         } else {
             loadLevel(currentLevel, questionIndex)
@@ -46,17 +46,35 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     private fun showSettingsDialog() {
-        val options = arrayOf("Borrar datos guardados", "Salir de la app")
+        val options = arrayOf("Créditos", "Borrar datos guardados", "Salir de la app")
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Ajustes")
         builder.setItems(options) { _, which ->
             when (which) {
-                0 -> deleteSavedData()
-                1 -> finishAffinity()
+                0 -> showCreditsDialog()
+                1 -> deleteSavedData()
+                2 -> finishAffinity()
             }
         }
         builder.setNegativeButton("Cancelar", null)
         builder.show()
+    }
+
+    private fun showCreditsDialog() {
+        val credits = arrayOf(
+            "Link 1: https://share.google/b8liEUbCJEotK840m",
+            "Link 2: https://share.google/mLIvs4uVxoQETT8Ql"
+        )
+        AlertDialog.Builder(this)
+            .setTitle("Créditos")
+            .setItems(credits) { _, which ->
+                val url = if (which == 0) "https://share.google/b8liEUbCJEotK840m" 
+                          else "https://share.google/mLIvs4uVxoQETT8Ql"
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(intent)
+            }
+            .setPositiveButton("Cerrar", null)
+            .show()
     }
 
     private fun deleteSavedData() {
@@ -68,7 +86,10 @@ class QuestionActivity : AppCompatActivity() {
         score = 0
         initialLivesAtLevelStart = 3
         
-        getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit().remove("SAVED_QUESTION_IDS").apply()
+        val editor = prefs.edit()
+        editor.remove("SAVED_QUESTION_IDS")
+        editor.remove("SEEN_QUESTION_IDS")
+        editor.apply()
 
         loadLevel(currentLevel, questionIndex)
         updateLivesUI()
@@ -128,9 +149,18 @@ class QuestionActivity : AppCompatActivity() {
             val ids = savedIdsString.split(",").map { it.toInt() }
             questionList = QuestionRepository.getQuestionsByIds(ids)
         } else {
-            questionList = QuestionRepository.getQuestionsByLevel(level)
+            val seenIdsString = prefs.getString("SEEN_QUESTION_IDS", "")
+            val seenIds = seenIdsString?.split(",")?.filter { it.isNotEmpty() }?.map { it.toInt() } ?: emptyList()
+            
+            questionList = QuestionRepository.getQuestionsByLevel(level, seenIds)
+            
             val idsString = questionList.joinToString(",") { it.id.toString() }
-            prefs.edit().putString("SAVED_QUESTION_IDS", idsString).apply()
+            val updatedSeenIds = (seenIds + questionList.map { it.id }).distinct()
+            
+            prefs.edit()
+                .putString("SAVED_QUESTION_IDS", idsString)
+                .putString("SEEN_QUESTION_IDS", updatedSeenIds.joinToString(","))
+                .apply()
             
             if (startIndex == 0) {
                 initialLivesAtLevelStart = lives
@@ -139,7 +169,6 @@ class QuestionActivity : AppCompatActivity() {
         }
         
         if (questionIndex >= questionList.size) {
-            // Si el índice es mayor o igual al tamaño de la lista, ya terminamos el nivel
             showTransition(currentLevel, score)
             return
         }
@@ -214,9 +243,8 @@ class QuestionActivity : AppCompatActivity() {
                 savedLevel++
                 savedIndex = 0
             } else {
-                // Al completar el Nivel 3, guardamos que terminó.
                 savedLevel = 3
-                savedIndex = 10 // Marcamos como nivel 3 terminado
+                savedIndex = 10
             }
             getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit().remove("SAVED_QUESTION_IDS").apply()
             
@@ -279,7 +307,13 @@ class QuestionActivity : AppCompatActivity() {
                 lives = 3
                 score = 0
                 initialLivesAtLevelStart = 3
-                getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit().remove("SAVED_QUESTION_IDS").apply()
+                
+                val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                prefs.edit()
+                    .remove("SAVED_QUESTION_IDS")
+                    .remove("SEEN_QUESTION_IDS")
+                    .apply()
+                
                 saveProgress()
                 loadLevel(currentLevel, questionIndex)
                 updateLivesUI()
@@ -307,6 +341,9 @@ class QuestionActivity : AppCompatActivity() {
                 questionIndex = 0
                 score = 0
                 lives = 3
+                
+                getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit().remove("SEEN_QUESTION_IDS").apply()
+
                 saveProgress()
                 finish()
             }
